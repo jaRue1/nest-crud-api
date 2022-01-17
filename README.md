@@ -7,10 +7,23 @@
 
 ## Project Overview
   <pre>This is a example of a crud api that uses nestjsx/crud dependency to implement crud functionality. 
+
 This project use an relational database sqlite to store data
-I also used the swagger ui library to create and interactive ui. See image below.
+
+I also used the swagger ui library to create and interactive ui. 
+
+I created three modules that have full crud functionality.
+
+See images below.
 </pre>
-![UI Image](./images/nest-crud-api.png)
+## User Endpoints (/users)
+![Users Endpoints](./images/users.png)
+## Products Endpoints (/products)
+![Product Endpoints](./images/products.png)
+## Company Endpoints (/company)
+![Company Endpoints](./images/company.png)
+
+
 ## Running the app
 ```bash
 # development
