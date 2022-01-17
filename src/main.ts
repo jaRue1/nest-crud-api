@@ -2,7 +2,9 @@ import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { UsersModule } from "./users/users.module"
-import { CompanyModule} from "./company/company.module"
+import { CompanyModule } from "./company/company.module"
+import { ProductsModule } from "./products/products.module"
+import { swagger } from '@nestjsx/crud/lib/crud';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -10,8 +12,8 @@ async function bootstrap() {
 
   const options = new DocumentBuilder()
     .setTitle('Users Api Endpoints')
-    .setDescription('Blueprint for crud Api')
-    .setVersion('2.0')
+    .setDescription('Users Blueprint')
+    .setVersion('3.0')
     .addTag('Users')
     .build();
   const userDocument = SwaggerModule.createDocument(app, options , {include: [UsersModule]});
@@ -19,13 +21,21 @@ async function bootstrap() {
 
   const secondOption = new DocumentBuilder()
     .setTitle('Company Api Endpoints')
-    .setDescription('Blueprint for crud Api')
-    .setVersion('2.0')
+    .setDescription('Company Blueprint')
+    .setVersion('3.0')
     .addTag('Company')
     .build();
   const companyDocument = SwaggerModule.createDocument(app, secondOption, {include: [CompanyModule]});
   SwaggerModule.setup('/company', app, companyDocument);
 
+  const thirdOption = new DocumentBuilder()
+    .setTitle('Product Api Endpoints')
+    .setDescription('Products Blueprint')
+    .setVersion('3.0')
+    .addTag('Products')
+    .build();
+  const productDocument = SwaggerModule.createDocument(app, thirdOption, {include: [ProductsModule]})
+  SwaggerModule.setup('/products', app, productDocument)
   await app.listen(4000);
 }
 bootstrap();

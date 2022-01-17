@@ -28,3 +28,12 @@ $ npm run test
 $ npm run test:e2e
 # test coverage
 $ npm run test:cov
+```
+## nestjsx/crud 101 
+    when implementing a new crud functionality
+
+    1. Create the Module 
+    2. Create the the Entity (Define Schema)
+    3. Create the Service (Implement Entity)
+    4. Create the Controller (Implement Entity && Service)
+    5. Connect Service and Controller to Module (Implement Entity && Service && Controller)
