@@ -5,8 +5,16 @@ import { UsersController } from './users.controller';
 import { UsersService } from './users.service';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([User])],
+  imports: [TypeOrmModule.forFeature([User]),
+  TypeOrmModule.forRoot({
+    type: 'sqlite',
+    database: ':memory',
+    entities: ['dist/**/*.entity{.ts,.js}'],
+    synchronize: true,
+  })
+],
   controllers: [UsersController],
-  providers: [UsersService]
+  exports: [UsersService],
+  providers: [UsersService],
 })
 export class UsersModule {}
