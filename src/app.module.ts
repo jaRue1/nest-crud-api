@@ -3,16 +3,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import { CompanyModule } from './company/company.module';
 import { ProductsModule } from './products/products.module';
-
+import config from '../ormconfig'; // db config
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'sqlite',
-      database: ':memory',
-      entities: ['dist/**/*.entity{.ts,.js}'],
-      synchronize: true,
-  }),
+    TypeOrmModule.forRoot(config),
   UsersModule,
   CompanyModule,
   ProductsModule],
