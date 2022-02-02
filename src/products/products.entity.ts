@@ -20,6 +20,10 @@ export class Products {
 
   @ApiProperty()
   @Column() 
+  rating: number;
+
+  @ApiProperty()
+  @Column() 
   inStock: boolean;
 
 }

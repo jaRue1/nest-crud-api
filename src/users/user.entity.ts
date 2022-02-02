@@ -14,4 +14,21 @@ export class User {
   @ApiProperty()
   @Column()
   lastName: string;
+
+  @ApiProperty()
+  @Column()
+  address: string;
+
+  @ApiProperty()
+  @Column()
+  zipCode: number;
+
+  @ApiProperty()
+  @Column()
+  phoneNumber: string;
+
+  @ApiProperty()
+  @Column()
+  email: string;
+
 }

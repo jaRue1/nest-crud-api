@@ -9,6 +9,10 @@ export class Company {
   @ApiProperty() 
   @Column() 
   name: string;
+
+  @ApiProperty()
+  @Column() 
+  rating: number;
   
   @ApiProperty() 
   @Column() 
